@@ -1,6 +1,4 @@
 # uProject
-Best project you've ever seen
-
 
 ## Environment setup
 1. Install ` git ` : [Git SCM](http://git-scm.com/downloads/). *Dependency for bower*
