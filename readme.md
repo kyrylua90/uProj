@@ -21,6 +21,7 @@ Best project you've ever seen
 1. Open in root folder a terminal and run ` grunt server `
 2. If you want watch on files chages and reload browser, run in other terminal ` grunt watch `
 3. To prevent js minification use "dev" flag ` grunt server:dev `
+4. To run tests run in terminal ` grunt tests `
 
 
 ## Build project
