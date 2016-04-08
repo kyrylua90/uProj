@@ -5,7 +5,6 @@
 <div class="box">
     <input type="text" ng-model="user.text">
     <input type="button" value="Add" ng-click="user.addField()">
-    {{user.text}}
     <ul class="users">
         <li ng-repeat="item in user.list">
             <strong>hash: {{item.hash}}</strong>
