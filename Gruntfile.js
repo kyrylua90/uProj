@@ -32,9 +32,10 @@ module.exports = function (grunt) {
         src: [jsPattern + 'module.js',
               jsPattern + 'filter.js',
               jsPattern + 'server.js',
+              jsPattern + 'factory.js',
               jsPattern + 'controller.js',
               jsPattern + 'templates.js',
-              jsPattern + '*.js'],
+              jsPattern + '*!Spec.js'],
         dest: config.output.script
       },
       html: {
@@ -128,6 +129,24 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+
+    karma: {
+      unit: {
+        options: {
+          frameworks: ['jasmine'],
+          singleRun: true,
+          browsers: ['PhantomJS'],
+          files: [
+            config.output.libs,
+            'bower_components/angular-mocks/angular-mocks.js',
+            config.output.script,
+            config.src.scripts + '**/*Spec.js',
+          ]
+        },
+        reporters: ['spec'],
+        plugins: ["karma-spec-reporter", "karma-jasmine", "karma-phantomjs-launcher"]
+      }
     }
 
   });
@@ -164,5 +183,7 @@ module.exports = function (grunt) {
     var buildAdd = dev === 'dev' ? ':dev' : '';
     grunt.task.run('build' + buildAdd, 'open', 'run');
   });
+
+  grunt.registerTask('test', ['build', 'karma']);
 
 };
