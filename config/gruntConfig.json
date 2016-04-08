@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "dev": "./development/",
+    "prod": "./production/"
+  },
+  "src": {
+    "views": "<%= this.paths.dev %>",
+    "scripts": "<%= this.paths.dev %>scripts/",
+    "styles": "<%= this.paths.dev %>styles/"
+  },
+  "output": {
+    "view": "<%= this.paths.prod %>index.html",
+    "scripts": "<%= this.paths.prod %>scripts/",
+    "script": "<%= this.output.scripts %>main.min.js",
+    "libs": "<%= this.output.scripts %>libs/libs.js",
+    "style": "<%= this.paths.prod %>styles/all.min.css",
+    "styleExt": ".min.css"
+  }
+}

@@ -1,0 +1,20 @@
+<nav class="navigation">
+    <!-- some additional structure-->
+    <a href="" class="logout" ng-click="user.logout()">Logout</a>
+</nav>
+<div class="box">
+    <input type="text" ng-model="user.text">
+    <input type="button" value="Add" ng-click="user.addField()">
+    {{user.text}}
+    <ul class="users">
+        <li ng-repeat="item in user.list">
+            <strong>hash: {{item.hash}}</strong>
+            <strong>input: {{item.input}}</strong>
+            <strong>mail: {{item.mail}}</strong>
+            <strong>data: {{item.date}}</strong>
+        </li>
+    </ul>
+</div>
+<div class="message">
+    <p>Successfully saved!</p>
+</div>
